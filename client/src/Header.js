@@ -7,11 +7,11 @@ return (
 
     <Wrapper>
         <NavBar>
-<div>ReachOut</div>
-<div>Home</div>
-<NavLink to="/wellness">Wellness ♥︎ </NavLink>
-<NavLink to="/findcenters">Medical Centers</NavLink>
-<div>Sign in</div>
+<NavigLink to="/" className='name'>ReachOut</NavigLink>
+<NavigLink to="/">Home</NavigLink>
+<NavigLink to="/wellness">Wellness ♥︎ </NavigLink>
+<NavigLink to="/findcenters">Medical Centers</NavigLink>
+<NavigLink to="/signin">Sign in</NavigLink>
 
         </NavBar>
 
@@ -26,9 +26,25 @@ export default Header;
 
 const Wrapper = styled.div`
  font-size: 1.3vw;
+ background-color: #4b5cb7;
 `;
 
+const NavigLink = styled(NavLink)`
+text-decoration: none;
+color: #faf1db;
+font-size: medium;
+font-weight: 300;
+
+
+
+&.active {
+    color: var(--primary-colour);
+  }
+
+`
+
 const NavBar = styled.div`
+background-color: #4b5cb7;
 padding: 3vw;
   width: 90%;
   margin: auto;
@@ -39,7 +55,11 @@ padding: 3vw;
   gap: 2vw;
   font-size: 1.4vw;
   max-width: var(--max-page-width);
-  background-color: white;
+
+  .name{
+  font-size: x-large;
+ 
+}
   /* color: var(--primary-colour); */
   /* background-color: #063563; */
 

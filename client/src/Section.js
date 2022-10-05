@@ -1,4 +1,4 @@
-import parse from "html-react-parser"
+import ReactHtmlParser from "html-react-parser"
 import styled from "styled-components"
 
 
@@ -6,24 +6,59 @@ const Section = ({title}) => {
 
 console.log(title)
 
+const transformAnchor = (html) => {
+
+    return ReactHtmlParser(html, {
+        transform(node) {
+            if (node.type === 'tag' && node.name === 'a') {
+                node.attribs.target = "_blank"
+            }
+        }
+    });
+
+}
+
 
     return (
-        <>
-        <h1>{title.Title}</h1>
+        <Wrapper>
+        <Titles>{title.Title}</Titles>
         <Content>
-        {parse(title.Content)}
+        {transformAnchor(title.Content)}
+
         </Content>
-        <div></div>
-        </>
+        </Wrapper>
     )
 }
 
 export default Section; 
 
+const Wrapper = styled.div`
+padding:15px; 
+margin:20px;
+background-color: var(--primary-colour);
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-radius: 5px 25px 45px 50px;
+
+`
+
+const Titles = styled.h1`
+margin : 10px; 
+`
+
 const Content = styled.div`
 
 >p{
-    color:red; 
+    line-height: 1.6; 
+    text-align: justify;
+}
+>h4 {
+    margin:5px;
+}
+>ul{
+    list-style: disc inside;
 }
 
+>a{
+text-decoration-line: none;
+}
 `

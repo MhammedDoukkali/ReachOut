@@ -65,7 +65,8 @@ export default MapBox;
 
 
 const Wrapper = styled.div`
-height: 50vh;
+height: 60vh;
+margin:20px;
 
 
 `

@@ -37,6 +37,7 @@ export default createGlobalStyle`
         box-sizing: border-box;
         font-family: var(--primary-family);
         /* background-color: var(--primary-colour); */
+        /* background-color: var(--primary-colour); */
     }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,
