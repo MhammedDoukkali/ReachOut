@@ -23,5 +23,5 @@ export default MyCenter;
 
 const Wrapper = styled.div `
 margin: 20px;
-
+font-size: large;
 `

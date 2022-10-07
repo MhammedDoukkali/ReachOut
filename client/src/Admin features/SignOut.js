@@ -34,17 +34,18 @@ position:absolute;
 top:150px;
 right:0;
 display:inline-block;
-padding:0.3em 1.2em;
+padding:0.7em 2.5em;
 margin:0 0.3em 0.3em 0;
 border-radius:2em;
 box-sizing: border-box;
 text-decoration:none;
-font-family:'Roboto',sans-serif;
-font-weight:300;
+font-family:var(--primary-family);
+font-weight:200;
 color:#FFFFFF;
 background-color:#4b5cb7;
 text-align:center;
 transition: all 0.2s;
+
 
 &:hover{
 background-color:#4095c6;

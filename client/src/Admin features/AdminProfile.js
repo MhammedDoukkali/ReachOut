@@ -17,9 +17,9 @@ const AdminProfile = () => {
 
 <AllCenters/>
 
-<button onClick={(ev)=> {
+<Button onClick={(ev)=> {
     navigate("/addcenter")
-           }}>Add a center</button>
+           }}>Add a center</Button>
 
 
 </Wrapper>
@@ -36,8 +36,24 @@ font-size: xx-large;
 margin: 30px; 
 
 `
+const Button = styled.button`
+display:inline-block;
+padding:0.5em 2.2em;
+margin:0 0.3em 0.3em 0;
+border-radius:2em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:var(--primary-family);
+font-weight:300;
+color:#FFFFFF;
+background-color:#00ab00;
+text-align:center;
+transition: all 0.2s;
 
+&:hover{
+background-color:#4095c6;
+}
+`
 const Wrapper = styled.div`
-
 
 `

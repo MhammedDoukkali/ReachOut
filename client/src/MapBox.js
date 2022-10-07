@@ -1,15 +1,13 @@
-
-
 import  { useState, useEffect, useRef } from 'react';
 import tt from "@tomtom-international/web-sdk-maps"
 import "@tomtom-international/web-sdk-maps/dist/maps.css";
 import styled from 'styled-components';
-import FindCenters from './FindCenters';
+
 
 
 const MapBox = ({data}) => {
 
-    console.log(data)
+    // console.log(data)
     
     const mapElement = useRef()
     const [map, setMap] = useState({});
@@ -32,7 +30,7 @@ const MapBox = ({data}) => {
             const popupOffsets = {
             bottom: [0, -200],
           }
-             data.forEach((element, index) => {
+             data.forEach((element) => {
                 const marker = new tt.Marker().setLngLat([element.longitude, element.lattitude]).addTo(map)
                 const popup = new tt.Popup({offset: popupOffsets}).setHTML(`<img src=${element.logo} style="width:50px" />${element.name} <br/> institution : ${element.institution} 
                 <br/> Phone Number : ${element.phoneNumber} <br/> <a href=${element.webSite} target="_blank" style="text-decoration: none">Web site : ${element.webSite}</a> <br/> Treatments : ${element.treatments}`);
@@ -47,17 +45,10 @@ const MapBox = ({data}) => {
         return () => map.remove();
     },[])
 
-  
-
-    
-
     return (
         <>
-        
-         <Wrapper ref={mapElement} id={'testing'} className="map">markers here</Wrapper>
-         
-
-    </>
+          <Wrapper ref={mapElement} id={'testing'} className="map">markers here</Wrapper> 
+        </>
     )
 };
 
@@ -68,5 +59,4 @@ const Wrapper = styled.div`
 height: 60vh;
 margin:20px;
 
-
-`
+`;

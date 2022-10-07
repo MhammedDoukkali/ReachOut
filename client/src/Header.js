@@ -11,7 +11,6 @@ return (
 <NavigLink to="/">Home</NavigLink>
 <NavigLink to="/wellness">Wellness ♥︎ </NavigLink>
 <NavigLink to="/findcenters">Medical Centers</NavigLink>
-{/* <NavigLink to="/signin">Sign in</NavigLink> */}
 
         </NavBar>
 

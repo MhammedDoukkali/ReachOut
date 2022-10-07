@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import Centers from "./Centers";
+
 import Markers from "./Markers";
 
 const FindCenters =()=> {
@@ -24,11 +24,6 @@ return (
     <>
     {centers &&
             <>
-        <div>
-            <div>
-                <Centers centers={centers}/>
-            </div>
-        </div>
         <Markers centers={centers}/>
     </>
     }
