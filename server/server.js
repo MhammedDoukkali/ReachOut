@@ -3,7 +3,7 @@ const express = require('express')
 // const helmet = require('helmet');
 const morgan = require('morgan');
 
-const { getinfoFromDb, addCenter, healthTopics } = require("./handler")
+const { getinfoFromDb, addCenter, getQuotes,addDataFromEnv, getCenters, deleteCenter } = require("./handler")
 
 express()
 
@@ -14,7 +14,11 @@ express()
 //Endpoints 
     .get('/api/get-info',getinfoFromDb)
     .post("/api/add-center", addCenter)
-    .get("/api/health-topic", healthTopics )
+    .get("/api/zenquotes", getQuotes)
+   //expect the body of username and password to .env)
+   .post("/api/admin-login", addDataFromEnv) 
+   .get("/api/get-centers", getCenters)
+   .delete("/api/delete-center/:center", deleteCenter)
 
 // 
     // this is our catch all endpoint.

@@ -11,7 +11,7 @@ return (
 <NavigLink to="/">Home</NavigLink>
 <NavigLink to="/wellness">Wellness ♥︎ </NavigLink>
 <NavigLink to="/findcenters">Medical Centers</NavigLink>
-<NavigLink to="/signin">Sign in</NavigLink>
+{/* <NavigLink to="/signin">Sign in</NavigLink> */}
 
         </NavBar>
 
@@ -34,12 +34,16 @@ text-decoration: none;
 color: #faf1db;
 font-size: medium;
 font-weight: 300;
+transition: all 0.2s;
 
-
-
+margin:0 0.3em 0.3em 0;
 &.active {
     color: var(--primary-colour);
   }
+
+  &:hover{
+color:#4095c6;
+}
 
 `
 
@@ -48,10 +52,10 @@ background-color: #4b5cb7;
 padding: 3vw;
   width: 90%;
   margin: auto;
-  height: 8vw;
+  height: 5vw;
   align-items: baseline;
   display: grid;
-  grid-template-columns: 0.9fr 0.5fr 0.5fr 0.5fr 0.2fr;
+  grid-template-columns: 0.9fr 0.5fr 0.5fr 0.3fr ;
   gap: 2vw;
   font-size: 1.4vw;
   max-width: var(--max-page-width);

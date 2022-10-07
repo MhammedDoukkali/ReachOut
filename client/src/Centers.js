@@ -1,5 +1,5 @@
 import FindCenters from "./FindCenters";
-import Center from "./Center";
+import Center from "./Admin features/DeleteCenter";
 
 const Centers = ({centers}) => {
 

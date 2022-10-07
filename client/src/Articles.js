@@ -12,16 +12,16 @@ const {Id} = useParams()
 useEffect(()=> {
     const healthTopics = () => {
       try {  
-       fetch('https://health.gov/myhealthfinder/api/v3/topicsearch.json?topicId=552%2C30533%2C30539%2C30547%2C30560') // 1
+       fetch('https://health.gov/myhealthfinder/api/v3/topicsearch.json?topicId=552%2C30533%2C30539%2C30547%2C30560%2C30588%2C30598%2C30610%2C30567%2C30559%2C537') // 1
          .then(res=> res.json())
          .then(data=> {
-            const test = (Id) => {
+            const filterArticlesById = (Id) => {
             const filterIds = data.Result.Resources.Resource.filter(resource => resource.Id === Id);
             // console.log(filterIds)
              setArticle(filterIds)
              
             }
-            test(Id)
+            filterArticlesById(Id)
          })
         
         
@@ -33,10 +33,6 @@ useEffect(()=> {
       healthTopics()
     }, [Id])
 
-// console.log(Id)
-// console.log( data.Result.Resources.Resource)
-
-// console.log(article)
 
 if (article === null) {
     return <div>Loading...</div>

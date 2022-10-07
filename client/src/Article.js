@@ -24,15 +24,10 @@ const Article = ({section}) => {
 export default Article ; 
 
 const Wrapper = styled.div `
-/* display: grid;
-  grid-template-columns: auto auto auto; */
+
   display:flex;
 flex-direction: column;
 align-content: center;
-    /* minmax(1rem, 1fr)
-    minmax(auto, 57ch)
-    minmax(1.2rem, 2fr)
-    minmax(1.2rem, 2fr); */
-    
+  
 
 `

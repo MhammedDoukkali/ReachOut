@@ -1,10 +1,15 @@
 import styled from "styled-components"; 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AdminContext } from "../AdminContext";
+import { Navigate,useNavigate } from "react-router-dom";
+import SignOut from "./SignOut";
+// import AllCenters from "./Admin features/AllCenters";
 
 const AddCenter = () => {
 
+    const {admin, setAdmin} = useContext(AdminContext);
+    
     const [error, setError] = useState(false);
-   
     const[state, setState] = useState({
         name:"",
         institution:"",
@@ -16,9 +21,8 @@ const AddCenter = () => {
     
     }); 
     const[treatments, setTreatments] = useState([]); 
-
-    // const checkListTreatment=['family medecine', 'Pediatrics',"women's health", "men's health", "mental health", "others"];
     const checkListTreatment=["urgent", "non-urgent"];
+    const navigate= useNavigate();
 
 const handleChange = (ev, key) => {
     setState({...state, [key] : ev.target.value});
@@ -36,8 +40,6 @@ const handleTreatment = (ev, key) => {
     // setTreatment({checkListTreatment,[key] : ev.target.value});
 
 }
-
-
 
 
 const handleSubmit = (e) => {
@@ -59,6 +61,14 @@ const handleSubmit = (e) => {
 };
 // console.log(state) 
     return (
+        <>
+        <SignOut/>
+        {!admin && (
+          <Navigate to="/signin" replace={true} />
+        )}
+            <Title>Form to add a center</Title>
+           
+            
     <Wrapper>
         <form onSubmit={(e)=> handleSubmit(e)}>
             <label>name :</label>
@@ -145,15 +155,18 @@ const handleSubmit = (e) => {
             />
         <button type="submit">Submit</button>
         </form>
-    </Wrapper>    
+    </Wrapper>  
+    {/* <AllCenters/> */}
+    </>  
     )
 }; 
 
 export default AddCenter; 
 
 
+
 const Wrapper = styled.div`
-margin:10px; 
+margin:30px; 
 form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -169,6 +182,13 @@ button {
     grid-column: 2 / 3;
 }
 
-`
+`;
+
+const Title=styled.h1`
+margin:30px;
+font-size: x-large;
+    text-align: center;
+
+`;
 
 
