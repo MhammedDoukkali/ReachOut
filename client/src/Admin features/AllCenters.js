@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import MyCenter from "./MyCenter";
+import {MdDeleteForever} from "react-icons/md"
 
 const AllCenters = () => {
 
@@ -39,10 +40,10 @@ setCenters(data.myCenters)
         <div>{centers.map((myCenter)=> {
             
             return (
-            <>
+            <Content>
             <MyCenter key={myCenter} myCenter ={myCenter}/>
-            <Button onClick={()=> handleDelete(myCenter.name)}>delete</Button>
-            </>
+            <Button><MdDeleteForever  size={'2em'} onClick={()=> handleDelete(myCenter.name)}/></Button>
+            </Content>
             )
 
         })}</div>
@@ -56,9 +57,16 @@ setCenters(data.myCenters)
 
 export default AllCenters; 
 
-const Wrapper = styled.div`
+const Content = styled.div`
+
 display:flex;
-justify-content: center;
+flex-direction: row;
+`
+const Wrapper = styled.div`
+/* display:flex;
+justify-content: flex-start;
+flex-direction: column; */
+/* position: relative; */
 
 `;
 
@@ -68,7 +76,7 @@ margin: 20px;
 `;
 
 const Button = styled.button`
-display:inline-block;
+/* display:inline-block;
 padding:0.5em 2.2em;
 margin:0 0.3em 0.3em 0;
 border-radius:2em;
@@ -83,5 +91,10 @@ transition: all 0.2s;
 
 &:hover{
 background-color:#4095c6;
-}
+} */
+
+background-color: white;
+border: none;
+color:#fb4358; 
+
 `;

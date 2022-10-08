@@ -1,6 +1,6 @@
 import { BrowserRouter as Router,  Routes,  Route,  Navigate,} from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Header from "./Header";
 import Wellness from "./Wellness";
 import FindCenters from "./FindCenters";
@@ -13,6 +13,7 @@ import AddCenter from "./Admin features/AddCenter";
 const App = () => {
   return (
     <Router>
+      
       <GlobalStyles />
       <Header />
       <Routes>
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/signin" element={<Signin/>}/>
         <Route path="/addcenter" element={<AddCenter/>} />
       </Routes>
+
       <Footer />
     </Router>
   );

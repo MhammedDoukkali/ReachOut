@@ -17,12 +17,12 @@ const AdminProfile = () => {
 
 <AllCenters/>
 
+
+</Wrapper>
+
 <Button onClick={(ev)=> {
     navigate("/addcenter")
            }}>Add a center</Button>
-
-
-</Wrapper>
 </>
 
     )

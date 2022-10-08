@@ -36,6 +36,7 @@ export default createGlobalStyle`
         vertical-align: baseline;
         box-sizing: border-box;
         font-family: var(--primary-family);
+        
         /* background-color: var(--primary-colour); */
         /* background-color: var(--primary-colour); */
     }

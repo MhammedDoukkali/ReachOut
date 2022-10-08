@@ -18,12 +18,11 @@ const Footer = () => {
 export default Footer; 
 
 const Wrapper = styled.div`
-/* max-width: var(--max-page-width); */
-/* display: flex; */
+
 padding-top: 1vw; 
-/* justify-content: center; */
+
 position: relative;
-min-height: 100vh;
+min-height: 85vh;
 `
 
 const BottomFooter = styled.div`
@@ -36,7 +35,5 @@ color: #faf1db;
 position: absolute; 
 bottom: 0;
 width:100vw; 
-
- 
 
 `;

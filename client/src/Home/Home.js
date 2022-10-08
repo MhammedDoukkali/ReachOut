@@ -1,8 +1,9 @@
 
-import LayoutWellness from "./layout/LayoutWellness"
+import LayoutWellness from "../layout/LayoutWellness"
 import {useState, useEffect} from "react"
 import parse from 'html-react-parser';
 import styled from "styled-components";
+import About from "./About";
 
 
 const Home = () => {
@@ -26,9 +27,12 @@ const Home = () => {
     
     
     
-    }, [])
+    }, []);
+
+
 
 if(allQuotes === null) {
+
     return (
         <div>Loading...</div>
     )
@@ -48,6 +52,7 @@ if(allQuotes === null) {
                  <p></p>
             </Content>
 }
+        <About/>
         </>
     )
 };
@@ -67,18 +72,19 @@ padding: 5px;
 }
 
 h2{
-    margin-top: 50px; 
+    margin-top: 70px; 
+    
     
 }
 
 p{
     font-weight: 100;
-    margin:10px;
+    margin:20px;
     line-height: 1.6;
 }
 
 hr.solid {
- margin: 10px;
+ margin: 30px;
   border-top: 3px solid black;
 }
 
