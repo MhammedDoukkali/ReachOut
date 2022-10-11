@@ -6,19 +6,19 @@ import styled from 'styled-components';
 
 // handling the map and the information displayed on the markers 
 const MapBox = ({data}) => {
-
+  //persist mapElement between renders
     const mapElement = useRef()
-    //storing the map on a state
+    //storing the map on a state  
     const [map, setMap] = useState({});
     //montreal lat and long
     const longitude = -73.5674
     const latitude = 45.5019
-
+  
 
     useEffect(()=> {
          //dispaly the map from the API 
         let map = tt.map({ 
-            key: "eeH1vubTGkciVPq5D2eDWUo3H7oCThCn", 
+            key: process.env.REACT_APP_TOMTOM_API_KEY, 
             container: mapElement.current,
             center:[longitude, latitude],
             zoom : 10,

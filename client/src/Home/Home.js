@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import parse from 'html-react-parser';
 import styled from "styled-components";
 import About from "./About";
+import CircularProgress from "@mui/material/CircularProgress";
 
 
 const Home = () => {
@@ -30,14 +31,14 @@ const Home = () => {
     }, []);
 
 
-
+// if the quotes coming from the backend not ready to render
 if(allQuotes === null) {
-
     return (
-        <div>Loading...</div>
+        <CircularProgress style={{
+            marginLeft: '40%'}} />
     )
 }
- //254px top 
+ 
 
     return (
         <>
@@ -79,7 +80,7 @@ h2{
 
 p{
     font-weight: 100;
-    margin:20px;
+    margin-top:30px;
     line-height: 1.6;
 }
 

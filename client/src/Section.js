@@ -1,11 +1,12 @@
 import ReactHtmlParser from "html-react-parser"
 import styled from "styled-components"
 
-
+// mapping prop coming from the Article component to the display each article 
 const Section = ({title}) => {
 
 console.log(title)
 
+//the function to parse the html coming from the API 
 const transformAnchor = (html) => {
 
     return ReactHtmlParser(html, {

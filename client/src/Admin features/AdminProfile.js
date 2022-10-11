@@ -4,7 +4,7 @@ import AllCenters from "./AllCenters";
 import SignOut from "./SignOut";
 
 
-
+// function to handle the Admin profile
 const AdminProfile = () => {
     
     const navigate = useNavigate()

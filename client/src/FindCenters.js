@@ -1,39 +1,30 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import Markers from "./Markers";
 
-const FindCenters =()=> {
+const FindCenters = () => {
+  //state where centers are stored
+  const [centers, setCenters] = useState(null);
 
-    //state where centers are stored
-const [centers, setCenters] = useState(null);
+  useEffect(() => {
+    //information coming from DB of medical centers
+    fetch("/api/get-info")
+      .then((res) => res.json())
+      .then((data) => {
+        //set the state to have the information
+        setCenters(data.data);
+      });
+  }, []);
 
-
-useEffect(()=> {
-//information coming from DB of medical centers 
-fetch("/api/get-info")
-.then((res) => res.json())
-.then((data) => {
-
-    setCenters(data.data)
-})
-
-}, [])
-
-// console.log(centers.data)
-
-return (
+  return (
     <>
-    {centers &&
-            <>
-        <Markers centers={centers}/>
+      {centers && (
+        <>
+          <Markers centers={centers} />
+        </>
+      )}
     </>
-    }
-    </>
-)
-
-
-
-
+  );
 };
 
 export default FindCenters;

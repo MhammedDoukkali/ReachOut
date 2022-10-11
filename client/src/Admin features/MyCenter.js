@@ -1,29 +1,17 @@
 import styled from "styled-components";
 
-const MyCenter = ({myCenter}) => {
-
-    // console.log(myCenter);
-
-    
-// .catch((err) => setError(err));
-
-
-    
-
-    return (
-        <>
-        <Wrapper>{myCenter.name}</Wrapper>
-      
-        </>
-    )
+//this component receive the prop from AllCenters to display
+const MyCenter = ({ myCenter }) => {
+  return (
+    <>
+      <Wrapper>{myCenter.name}</Wrapper>
+    </>
+  );
 };
 
-export default MyCenter; 
+export default MyCenter;
 
-
-const Wrapper = styled.div `
-margin: 20px;
-font-size: large;
- 
-
-`
+const Wrapper = styled.div`
+  margin: 20px;
+  font-size: large;
+`;

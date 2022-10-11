@@ -1,17 +1,8 @@
-import FindCenters from "./FindCenters";
 import MapBox from "./MapBox";
 
-
-const Markers = ({centers}) => {
-
-    return (
-        <>
-        
-        { centers &&
-        <MapBox data={centers}/>
-}
-        </>
-    )
-}
+// this component is used to pass a prop to the MapBox from FindCenters
+const Markers = ({ centers }) => {
+  return <>{centers && <MapBox data={centers} />}</>;
+};
 
 export default Markers;
