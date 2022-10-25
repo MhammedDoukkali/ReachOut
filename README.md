@@ -27,7 +27,7 @@ ReachOut is a full-stack web application that provides information on both physi
 
 ![image](https://user-images.githubusercontent.com/105254146/197802305-d05b1a5f-745d-4f63-9690-e3c08c3810db.png)
 
-![image](https://user-images.githubusercontent.com/105254146/197802692-7d3ca11b-b16f-4167-8e46-a6b5518da839.png)
+![image](https://user-images.githubusercontent.com/105254146/197856710-1950430e-4ae4-4e9d-908b-1e639d1f95a5.png)
 
 
 
