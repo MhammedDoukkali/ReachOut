@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Resources from "./Resources";
 import styled from "styled-components";
 import CircularProgress from "@mui/material/CircularProgress";
+import Search from "./Search";
 
 const Wellness = () => {
   //data from health.gov API
@@ -34,11 +35,17 @@ const Wellness = () => {
       />
     );
   }
-
+// console.log(data.Resource)
   return (
     <>
       {data && (
         <Wrapper>
+          <Search 
+          suggestions={data.Resource} 
+          handleSelect={(suggestion)=> {
+            window.alert(suggestion)
+          }}
+          /> 
           {data.Resource.map((resources) => {
             return <Resources key={resources} resources={resources} />;
           })}
@@ -51,7 +58,14 @@ const Wellness = () => {
 export default Wellness;
 
 const Wrapper = styled.div`
-  display: grid;
+  /* display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
 `;
+
+

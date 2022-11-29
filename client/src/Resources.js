@@ -9,7 +9,7 @@ const Resources = ({resources}) => {
     // console.log(resources.Sections)
     const navigate = useNavigate();
 // const articles = resources.Sections
-console.log(resources)
+
     return (
         <>
         
