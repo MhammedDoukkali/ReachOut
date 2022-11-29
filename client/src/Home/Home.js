@@ -50,18 +50,16 @@ if(allQuotes === null) {
             <h2>What is ReachOut?</h2>
             <p>ReachOut is a platform that we hope can help bridge the gap between physical and mental health,
                  by raising awareness and promoting information, resources, and help to those in need.</p>
-                 <p></p>
             </Content>
 }
-        <About/>
+        {/* <About/> */}
         </>
     )
 };
 
-const Content = styled.h1`
-position : absolute;
-top: 20%;
-left:50%; 
+const Content = styled.div`
+display: flex;
+flex-direction: column;
 font-size: x-large;
 padding: 5px;
 >blockquote {
@@ -73,9 +71,6 @@ padding: 5px;
 }
 
 h2{
-    margin-top: 70px; 
-    
-    
 }
 
 p{
@@ -89,7 +84,6 @@ hr.solid {
   border-top: 3px solid black;
 }
 
-
-`
+`;
 
 export default Home;

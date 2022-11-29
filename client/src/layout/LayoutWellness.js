@@ -5,19 +5,28 @@ const LayoutWellness = () => {
 
 
     return (
+        <Wrapper>
 <BackImg src={healthImg}/>        
+</Wrapper>
     )
 };
+
  export default LayoutWellness;
 
+ const Wrapper = styled.div`
+display: flex;
+justify-content: center;
+align-content: center;
+ `;
 
  const BackImg = styled.img`
- 
-  max-height: 50vh;
-  display : block;
+  height: 70%;
+  width:70%;
+  transition: width 2s, height 4s;
 
-  /* grid styles */
+  :hover {
+  width: 100%;
+  height: 100%;
+}
 
-  
-
- `
+ `;
