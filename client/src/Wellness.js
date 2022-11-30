@@ -36,16 +36,19 @@ const Wellness = () => {
     );
   }
 // console.log(data.Resource)
+
+
   return (
+    // <Search 
+    // suggestions={data.Resource} 
+    // handleSelect={(suggestion)=> {
+    //   window.alert(suggestion)
+    // }}
+    // />
     <>
       {data && (
+        
         <Wrapper>
-          <Search 
-          suggestions={data.Resource} 
-          handleSelect={(suggestion)=> {
-            window.alert(suggestion)
-          }}
-          /> 
           {data.Resource.map((resources) => {
             return <Resources key={resources} resources={resources} />;
           })}
@@ -58,14 +61,14 @@ const Wellness = () => {
 export default Wellness;
 
 const Wrapper = styled.div`
-  /* display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 50px; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin: 50px;
+  background-color: #e8eafc;
+  align-self: center;
+  justify-content: flex-start;
 `;
 
 

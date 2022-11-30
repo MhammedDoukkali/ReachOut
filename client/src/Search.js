@@ -52,7 +52,7 @@ console.log(value);
 export default Search; 
 
 const Wrapper=styled.div`
-
+display: inline-block;
 `;
 
 const Input=styled.input`

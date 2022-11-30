@@ -36,7 +36,7 @@ export default createGlobalStyle`
         vertical-align: baseline;
         box-sizing: border-box;
         font-family: var(--primary-family);
-        
+        background-color: #e8eafc;
        
     }
     /* HTML5 display-role reset for older browsers */

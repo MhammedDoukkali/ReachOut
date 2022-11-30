@@ -26,27 +26,24 @@ export default Header;
 
 const Wrapper = styled.div`
   font-size: 1.3vw;
-  background-color: #4b5cb7;
+  background-color: #e8eafc;
 `;
 
 const NavigLink = styled(NavLink)`
   text-decoration: none;
-  color: #faf1db;
+  color: #202058;
   font-size: 0.9em;
   font-weight: 500;
   transition: all 0.2s;
   margin: 0 0.3em 0.3em 0;
-  &.active {
-    color: var(--primary-colour);
-  }
 
   &:hover {
-    color: #4095c6;
+    color: #fa4275;
   }
 `;
 
 const NavBar = styled.div`
-  background-color: #4b5cb7;
+  background-color: #e8eafc;
   padding: 2vw;
   width: 90%;
   margin: auto;
@@ -57,7 +54,7 @@ const NavBar = styled.div`
   gap: 2vw;
   font-size: 1em;
   font-weight: bolder;
- 
+
 
   .name {
     font-size: 1.5em;
