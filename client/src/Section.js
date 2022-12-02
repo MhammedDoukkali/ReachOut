@@ -36,15 +36,14 @@ export default Section;
 const Wrapper = styled.div`
 padding:15px; 
 margin:20px;
-background-color: var(--primary-colour);
+background-color: #e8eafc;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 border-radius: 5px 25px 45px 50px;
-
-`
+`;
 
 const Titles = styled.h1`
 margin : 10px; 
-`
+`;
 
 const Content = styled.div`
 
@@ -62,4 +61,4 @@ const Content = styled.div`
 >a{
 text-decoration-line: none;
 }
-`
+`;

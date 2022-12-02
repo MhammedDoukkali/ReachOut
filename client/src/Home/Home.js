@@ -5,30 +5,25 @@ import parse from 'html-react-parser';
 import styled from "styled-components";
 import About from "./About";
 import CircularProgress from "@mui/material/CircularProgress";
+import useInterval from "../hook/useInterval";
 
 
 const Home = () => {
 
     const [allQuotes, setAllQuotes]= useState(null)
-    const[randomData, setRandomData] = useState()
     
-    // useffect for allquotes if quotes null 
-    useEffect(()=> {
-
-       fetch("/api/zenquotes") // 1
-         .then(res=> res.json())
-         .then(data=> {
-             setAllQuotes(data.data[0].h)
-            
-         })
-        
-      .catch((err)=> {
-            return err.error ? JSON.parse(err.error) : err;
-      })
-    
-    
-    
-    }, []);
+useInterval(()=> {
+    fetch("/api/zenquotes") // 1
+    .then(res=> res.json())
+    .then(data=> {
+       data.data.map(quote => {
+           return setAllQuotes(`${quote.h}`)
+       })
+       })
+ .catch((err)=> {
+       return err.error ? JSON.parse(err.error) : err;
+ })
+}, 10000)
 
 
 // if the quotes coming from the backend not ready to render
@@ -42,7 +37,7 @@ if(allQuotes === null) {
 
     return (
         <>
-        <LayoutWellness/>
+        {/* <LayoutWellness/> */}
         {allQuotes &&
         <Content>
             {parse(allQuotes)} 
@@ -62,6 +57,7 @@ display: flex;
 flex-direction: column;
 font-size: x-large;
 padding: 5px;
+margin: 5em;
 >blockquote {
     text-align:center;
     font-weight: 100;
